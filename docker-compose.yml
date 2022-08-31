@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  storefront-demo:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        - API_URI=https://apps.shoppu.tv/graphql/
+    ports:
+      - 3000:3000
+    restart: unless-stopped
